@@ -5,21 +5,22 @@ var packer = require('packer');
 var args = require('nomnom').opts({
     input_file: {
         abbr: 'i',
-		help: 'Input file (default stdin)'
+	help: 'Input file (default stdin)'
     },
     base62: {
         abbr: 'b',
         flag: true,
-		help: 'Base62 encode'
+	help: 'Base62 encode'
     },
     output_file: {
-		abbr: 'o',
-		help: 'Output file (default stdout)'
+	abbr: 'o',
+	help: 'Output file (default stdout)'
     },
     shrink: {
-		abbr: 's',
-		help: 'Shrink variables'
-	}
+	abbr: 's',
+        flag: true,
+	help: 'Shrink variables'
+    }
 }).parseArgs();
 
 var data = '';
