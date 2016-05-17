@@ -245,7 +245,7 @@ var Packer = Base.extend({
 	clean: {
 		"\\(\\s*;\\s*;\\s*\\)": "(;;)", // for (;;) loops
 		"throw[^};]+[};]": IGNORE, // a safari 1.3 bug
-		";+\\s*([};])": "$1"
+		"(;+)\\s*([};])": "$1$2" // Do not remove ; to loop breakages {for(;;);}
 	},
 	
 	data: {
